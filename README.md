@@ -17,7 +17,7 @@ _i.e. 3 dropout probabilities + 1 for `mean` + 1 for `log_var`_
 
 ### z-standardized
 
-3 repeats, length scale = 1e-4, number of features per each layer = 58 (the amount of features)
+3 repeats (mean & stdev below of the repeats), length scale = 1e-4, number of features per each layer = 58 (the amount of features)
 
 ```python
 RMSE Test mean:  20.897048178203246
@@ -30,7 +30,7 @@ R^2 =  0.08881353567778605
 
 ### ZCAcor
 
-3 repeats, length scale = 1e-4, number of features per each layer = 58 (the amount of features)
+3 repeats (mean & stdev below of the repeats), length scale = 1e-4, number of features per each layer = 58 (the amount of features)
 
 ```python
 RMSE Test mean:  21.128462781242433
