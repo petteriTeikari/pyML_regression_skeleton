@@ -68,6 +68,8 @@ R^2 =  0.09959331771393598
 
 ### ZCAcor
 
+_"Optimal whitening and decorrelation"_, [doi:10.1080/00031305.2016.1277159](https://doi.org/10.1080/00031305.2016.1277159)
+
 3 repeats (mean & stdev below of the repeats), length scale = 1e-4, number of features per each layer = 58 (the amount of features)
 
 ```python
@@ -79,7 +81,16 @@ Epistemic uncertainty: 0.23795429843345484
 R^2 =  0.15268120241824223
 ```
 
- _"Optimal whitening and decorrelation"_, [doi:10.1080/00031305.2016.1277159](https://doi.org/10.1080/00031305.2016.1277159)
+`nb_reps` = 16, `K_test` = 100, best `ll` = 1e-2 from `lscale= [1, 1e-1, 1e-2, 1e-3, 1e-4]`. Stronger regularization gave the better test mean now than with _z_-standardization. But pretty close the results anyway, most likely statistically not significant.
+
+```python
+RMSE Test mean:  21.063691003190005
+RMSE Test stdev:  0.0677725253588539
+Dropout probabilities (per dense layer):  [1.5095859e-05 2.3792471e-05 3.8986793e-05 9.4188708e-06 2.4920020e-01]
+Aleatoric uncertainty (exp from logvar):  0.7277302535590989
+Epistemic uncertainty (var of means): 0.22482351792628677 
+```
+With ZCAcor, the aleatoric and epistemic uncertainties increased with more repeats, whereas with z-standardization, both uncertainties when up?
 
 ## TODO!
 
