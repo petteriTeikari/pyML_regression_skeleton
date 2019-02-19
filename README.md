@@ -15,6 +15,30 @@ https://github.com/yaringal/ConcreteDropout/blob/master/concrete-dropout-keras.i
 
 _i.e. 3 dropout probabilities + 1 for `mean` + 1 for `log_var`_
 
+```python
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_5 (InputLayer)            (None, 58)           0                                            
+__________________________________________________________________________________________________
+concrete_dropout_1 (ConcreteDr  (None, 58)           3423        input_5[0][0]                    
+__________________________________________________________________________________________________
+concrete_dropout_2 (ConcreteDr  (None, 58)           3423        concrete_dropout_21[0][0]        
+__________________________________________________________________________________________________
+concrete_dropout_3 (ConcreteDr  (None, 58)           3423        concrete_dropout_22[0][0]        
+__________________________________________________________________________________________________
+concrete_dropout_4 (ConcreteDr  (None, 1)            60          concrete_dropout_23[0][0]        
+__________________________________________________________________________________________________
+concrete_dropout_5 (ConcreteDr  (None, 1)            60          concrete_dropout_23[0][0]        
+__________________________________________________________________________________________________
+output (Concatenate)            (None, 2)            0           concrete_dropout_24[0][0]        
+                                                                 concrete_dropout_25[0][0]        
+==================================================================================================
+Total params: 10,389
+Trainable params: 10,389
+Non-trainable params: 0
+
+```
+
 ### z-standardized
 
 3 repeats (mean & stdev below of the repeats), length scale = 1e-4, number of features per each layer = 58 (the amount of features)
