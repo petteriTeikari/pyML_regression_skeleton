@@ -28,7 +28,7 @@ Epistemic uncertainty (var of means): 0.153345257861877
 R^2 =  0.08881353567778605
 ```
 
-`nb_reps` = 16, `K_test` = 100, best `ll` = 1e-4 from `lscale= [1, 1e-1, 1e-2, 1e-3, 1e-4]`
+`nb_reps` = 16, `K_test` = 100, best `ll` = 1e-4 from `lscale= [1, 1e-1, 1e-2, 1e-3, 1e-4]`. In other words, the less you regularize, the "better" the fit which makes sense, so you could switch the metric to use.
 
 
 ```python
