@@ -28,6 +28,20 @@ Epistemic uncertainty (var of means): 0.153345257861877
 R^2 =  0.08881353567778605
 ```
 
+`nb_reps` = 16, `K_test` = 100
+
+
+```python
+RMSE Test mean:  21.066091801101543
+RMSE Test stdev:  0.05654301392338118
+Dropout probabilities (per dense layer):  [1.5242346e-05 2.1328844e-05 6.4392938e-05 8.9678297e-06 2.4842893e-01]
+Aleatoric uncertainty (exp from logvar):  0.7082485026630876
+Epistemic uncertainty (var of means): 0.45814347850488174 
+R^2 =  0.09959331771393598
+```
+
+#### TODO! the same with cross-validation
+
 ### ZCAcor
 
 3 repeats (mean & stdev below of the repeats), length scale = 1e-4, number of features per each layer = 58 (the amount of features)
