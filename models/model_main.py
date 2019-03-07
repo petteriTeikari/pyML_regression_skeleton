@@ -4,7 +4,8 @@ from models.MC_dropout_dense_regression import MCdpout_grid_search
 
 import time
 
-def model_wrapper(data_encoded, y_classification, y_regression, scaler, verbose = True,
+def model_wrapper(data_encoded, y_classification, y_regression, scaler, path_out,
+                  verbose = True,
                   model = 'MC_dropout', do_grid_search = True):
 
     if verbose:
@@ -28,8 +29,9 @@ def model_wrapper(data_encoded, y_classification, y_regression, scaler, verbose 
 
             print('Grid Search for optimal hyperparameters')
             nb_feat = [data_encoded.shape[1]]
-            best_metric, best_network, best_lscale, best_featcount, best_y_preds = MCdpout_grid_search(data_encoded, y_regression,
+            best_metric, best_network, best_lscale, best_featcount, best_y_preds = MCdpout_grid_search(data_encoded, y_regression, path_out,
                                                                            nb_feat =  nb_feat)
+
             print('test mean RMSE = ', best_metric, ', lscale = ',  best_lscale, ', feat_count = ', best_featcount)
             # TODO! Save these to disk as well
 

@@ -9,7 +9,7 @@ from sklearn.metrics import r2_score, explained_variance_score, median_absolute_
 def compute_regression_metrics(y_true, y_pred,
                                test_mean, test_std_err,
                                best_aleatoric, best_epistemic,
-                               results_cv, fileout_string, nb_reps):
+                               results_cv, path_out, fileout_string, nb_reps):
 
     # https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics
     # https://scikit-learn.org/stable/modules/classes.html#regression-metrics
@@ -45,12 +45,12 @@ def compute_regression_metrics(y_true, y_pred,
     data_out = np.hstack((test_mean, test_std_err, best_aleatoric, best_epistemic, exp_var, mean_abs_err, mse, med_abs_err, r2))
 
     # and write to disk
-    np.savetxt(fileout_string,  np.column_stack(data_out), delimiter=",", header=headers_all, fmt="%f", comments='')
+    np.savetxt(os.path.join(path_out, fileout_string),  np.column_stack(data_out), delimiter=",", header=headers_all, fmt="%f", comments='')
 
     # write the predictions too
     fileout_string = fileout_string.replace('metrics.', 'predictions.')
     true_vs_pred = np.hstack((np.row_stack(y_true), np.row_stack(y_pred)))
-    np.savetxt(fileout_string, true_vs_pred, delimiter=",", header='True,Predicted', fmt="%f", comments='')
+    np.savetxt(os.path.join(path_out, fileout_string), true_vs_pred, delimiter=",", header='True,Predicted', fmt="%f", comments='')
 
     print('     R^2 = ', r2)
     print('     MSE = ', mse)

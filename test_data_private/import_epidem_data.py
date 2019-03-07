@@ -5,8 +5,9 @@ import pandas as pd
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 def import_epi_data(path='/home/petteri/Dropbox/manuscriptDrafts/deepPLR/code/RLN_tabularData/test_data_private',
-                    test_dataset='TestPredMod.csv', process_from_nonhotencoded = False,
+                    test_dataset='TestPredMod.csv', process_from_nonhotencoded = True,
                     # file_in = 'df_cont_ZCA_cor.csv',
+                    # file_in = 'df_scaled.csv',
                     file_in = 'df_ZCA_cor.csv',
                     debug_mode=False, verbose = True):
 
@@ -124,6 +125,8 @@ def import_epi_data(path='/home/petteri/Dropbox/manuscriptDrafts/deepPLR/code/RL
         df_scaled.to_csv(os.path.join(path, 'df_scaled.csv'), index=False)
 
     else:
+
+        print('\nLoad data from: ', file_in, '\n')
 
         with open(os.path.join(path, file_in), "rt") as f:
 

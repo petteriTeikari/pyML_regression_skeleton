@@ -19,18 +19,16 @@ def main():
     this_dir = sys.path[0]
     os.chdir(this_dir)
     path_in = os.path.join(this_dir, 'test_data_private')
-    path_out = os.path.join(this_dir, 'MODELS_OUT')
+    path_out = os.path.join(this_dir, 'models', 'MODELS_OUT')
     print('Output path is = ', path_out)
 
     # Import data
     read_mode = '' # ''non_hotencoded'
     data_encoded, y_classification, y_regression, scaler = import_epi_data(path = path_in,
-                                                                           process_from_nonhotencoded = False)
+                                                                           process_from_nonhotencoded = True)
 
     # Your model(s) here
-    model_wrapper(data_encoded, y_classification, y_regression, scaler)
-
-
+    model_wrapper(data_encoded, y_classification, y_regression, scaler, path_out)
 
 if __name__ == "__main__":
     main()
