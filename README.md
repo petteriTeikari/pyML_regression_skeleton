@@ -92,8 +92,21 @@ Epistemic uncertainty (var of means): 0.22482351792628677
 ```
 With ZCAcor, the aleatoric and epistemic uncertainties increased with more repeats, whereas with z-standardization, both uncertainties when up?
 
+### Attention for the dense units
+
+`nb_reps` = 3, `K_test` = 100, best `ll` = 1e-2, `no of dense units` = 3, `attncfg` = 'oninput'
+
+```python
+RMSE Test mean:  19.16054
+RMSE Test stdev:  0.151641
+Aleatoric uncertainty (exp from logvar):  16.679714
+Epistemic uncertainty (var of means): 1.124963
+R^2: 0.176519
+```
+
 ## TODO!
 
 * cross-validation from `skilearn`
 * Make a publically available example file
 * add pip-requirements.txt
+* try the MCBN for regression, Teye et al. (2018): "Bayesian Uncertainty Estimation for Batch Normalized Deep Networks" https://arxiv.org/abs/1802.06455
