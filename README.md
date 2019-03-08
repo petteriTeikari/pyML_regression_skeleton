@@ -111,3 +111,11 @@ R^2: 0.176519
 * add pip-requirements.txt
 * try the MCBN for regression, Teye et al. (2018): "Bayesian Uncertainty Estimation for Batch Normalized Deep Networks" https://arxiv.org/abs/1802.06455
 * add proper error/loss metrics, e.g. (predictive) log likelihood ((P)LL) [https://github.com/yaringal/DropoutUncertaintyExps], Continuous Ranked Probability Score (CRPS) [https://arxiv.org/abs/1802.06455], entropy and mutual information [https://arxiv.org/abs/1803.08533]
+
+### Motivation
+
+* As a pure regression model, this framework does not perform superbly, but then on the other hands this framework allows plugging in your metabolomic/genetic/omics data with some other unstructured data (images, 1D signals, volumes, etc.) along with these scalars.
+
+* Consider extending this into an ensemble model (like the stacked regressors by Serigne [https://www.kaggle.com/serigne/stacked-regressions-top-4-on-leaderboard] or by amitregmi [https://www.kaggle.com/amitregmi/stacking-ensemble-model-house-pricing-regression])
+
+* See for example "Bayesian Neural Network Ensembles" [https://arxiv.org/abs/1811.12188] [https://github.com/TeaPearce] or "Deep Forest: Towards an Alternative to Deep Neural Networks" [https://arxiv.org/abs/1702.08835v2] [https://github.com/kingfengji/gcForest]
