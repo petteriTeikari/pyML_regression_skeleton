@@ -110,3 +110,4 @@ R^2: 0.176519
 * Make a publically available example file
 * add pip-requirements.txt
 * try the MCBN for regression, Teye et al. (2018): "Bayesian Uncertainty Estimation for Batch Normalized Deep Networks" https://arxiv.org/abs/1802.06455
+* add proper error/loss metrics
